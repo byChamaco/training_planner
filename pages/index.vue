@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Card></Card>
         <h1>{{number}}</h1>
         <button @click="sumar">Sumar</button>
     </div>
