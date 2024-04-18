@@ -1,12 +1,34 @@
 <template>
   <NuxtLayout name="header"></NuxtLayout>
-  <NuxtLink to="/list">Lista</NuxtLink>
+  <UBreadcrumb divider="/" :links="links"/>
+  <!-- <NuxtLink to="/list">Lista</NuxtLink>
+  <NuxtLink to="/login">Login</NuxtLink> -->
   <NuxtPage />
 </template>
 
 <script>
   export default {
     name: 'App',
+    data() {
+      return {
+        links: [],
+      }
+    },
+    created() {
+      this.links = [
+        {
+          label: 'Home',
+          to: '/'
+        },
+        {
+          label: 'Navigation',
+          to: '/list'
+        },
+        {
+          label: 'Breadcrumb',
+        }
+      ]
+    },
   }
 </script>
 
