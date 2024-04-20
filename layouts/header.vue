@@ -11,13 +11,13 @@
       data() {
         return {
           selected: false,
-          icon_name: useColorMode().preference === 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill',
+          icon_name: useColorMode().preference  ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill',
         }
       },
       methods: {
         selectMode() {
           useColorMode().preference = useColorMode().preference == 'dark' ? 'light' : 'dark';
-          this.icon_name = useColorMode().preference === 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill';
+          this.icon_name = useColorMode().preference == 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill';
         }
       },
     }
