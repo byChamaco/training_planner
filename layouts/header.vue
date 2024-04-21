@@ -1,6 +1,6 @@
 <template>
     <div class="app_header personal_button">
-        <h1 class="header-title">Trainig Planner</h1>
+        <h1 class="header-title">Training Planner</h1>
         <UIcon class="header-icon" :name="icon_name" dynamic size="3rem" @click="selectMode"/>
     </div>
 </template>

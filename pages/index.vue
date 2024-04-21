@@ -1,6 +1,7 @@
 <template>
     <div class="welcome-container">
       <h1>Welcome to Our Website!</h1>
+      <img src="~/assets/img/welcomeDark.svg" alt="Welcome Image" class="welcome-image">
       <p>Get started by logging in or signing up:</p>
       <div class="button-container">
         <UButton @click="redirectToLogin" class="login-button">Log In</UButton>
@@ -36,6 +37,12 @@
     margin-top: 50px;
   }
   
+  .welcome-image {
+    max-width: 100%;
+    margin: 20px auto;
+    transform: scale(2.3); /* Aumenta el tamaño de la imagen en un 30% */
+  }
+  
   .button-container {
     display: flex;
     justify-content: center;
@@ -47,3 +54,4 @@
     margin: 0 10px;
   }
   </style>
+  
