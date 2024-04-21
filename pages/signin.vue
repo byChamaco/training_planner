@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>Listaaaaaa</h1>
+        <h1>Inicion de sesión</h1>
+        <input type="text">
     </div>
 </template>
   
@@ -15,5 +16,5 @@
 </script>
   
 <style>
-  
+
 </style>
