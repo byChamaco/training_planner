@@ -1,9 +1,11 @@
 <template>
-    <div>
+    <div class="welcome-container">
       <h1>Welcome to Our Website!</h1>
       <p>Get started by logging in or signing up:</p>
-      <UButton @click="redirectToLogin">Log In</UButton>
-      <UButton @click="redirectToSignIn">Sign In</UButton>
+      <div class="button-container">
+        <UButton @click="redirectToLogin" class="login-button">Log In</UButton>
+        <UButton @click="redirectToSignIn" class="signin-button">Sign In</UButton>
+      </div>
     </div>
   </template>
   
@@ -28,7 +30,20 @@
   }
   </script>
   
-  <style>
-  /* Estilos opcionales aquí */
-  </style>
+  <style scoped>
+  .welcome-container {
+    text-align: center;
+    margin-top: 50px;
+  }
   
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .login-button,
+  .signin-button {
+    margin: 0 10px;
+  }
+  </style>
