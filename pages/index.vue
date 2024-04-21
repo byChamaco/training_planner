@@ -1,40 +1,34 @@
 <template>
-    <UInput v-model="name" placeholder="Name"/>
-    <UInput v-model="email" placeholder="Email"/>
-    <UInput v-model="password" placeholder="Password"/>
-    <UButton @click="saveUser">Save</UButton>
-</template>
+    <div>
+      <h1>Welcome to Our Website!</h1>
+      <p>Get started by logging in or signing up:</p>
+      <UButton @click="redirectToLogin">Log In</UButton>
+      <UButton @click="redirectToSignIn">Sign In</UButton>
+    </div>
+  </template>
   
-<script>
-    export default {
-        name: 'Index',
-        data() {
-            return {
-                name: null,
-                email: null,
-                password: null,
-                // mode_theme: 'dark',
-            }
-        },
-        created() {
-            this.getUsers();
-        },
-        methods: {
-            async getUsers() {
-                // console.log(this.name, this.email, this.password)
-                const response = await $fetch('/api/users', {
-                    method: 'POST'
-                })
-                // useColorMode().preference = response.data[0].mode_theme;
-                console.log(response.data);
-            },
-            saveUser() {
-
-            }
-        },
+  <script>
+  import UButton from '~/components/Button.vue'
+  
+  export default {
+    name: 'Welcome',
+    components: {
+      UButton
+    },
+    methods: {
+      redirectToLogin() {
+        // Redirige a la página de inicio de sesión
+        this.$router.push('/login');
+      },
+      redirectToSignIn() {
+        // Redirige a la página de registro
+        this.$router.push('/signin');
+      }
     }
-</script>
+  }
+  </script>
   
-<style>
+  <style>
+  /* Estilos opcionales aquí */
+  </style>
   
-</style>
