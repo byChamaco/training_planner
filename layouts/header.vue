@@ -8,11 +8,15 @@
 <script>
     export default {
       name: 'Header',
+      props: ['mode'],
       data() {
         return {
           selected: false,
-          icon_name: useColorMode().preference  ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill',
+          icon_name: this.mode == 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill',
         }
+      },
+      created() {
+        useColorMode().preference = this.mode;
       },
       methods: {
         selectMode() {

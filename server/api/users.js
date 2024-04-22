@@ -9,7 +9,8 @@ const connection = mysql.createConnection({
     database: 'u520834844_prueba',
 });
 
-// Ejemplo de consulta
+connection.connect();
+
 connection.query('SELECT * FROM users', (err, rows) => {
     if (err) throw err;
     query = rows;
@@ -19,7 +20,5 @@ connection.query('SELECT * FROM users', (err, rows) => {
 connection.end();
 
 export default defineEventHandler((event) => {
-    return {
-      data: query,
-    }
+    return query;
 })
