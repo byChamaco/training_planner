@@ -6,5 +6,8 @@ export default defineNuxtConfig({
         preference: 'light',
     },
     ssr: false,
+    routeRules: {
+        '/api/users': { swr: false },
+    },
 //   devtools: { enabled: true },
 })

@@ -22,6 +22,11 @@
         selectMode() {
           useColorMode().preference = useColorMode().preference == 'dark' ? 'light' : 'dark';
           this.icon_name = useColorMode().preference == 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill';
+          this.saveMode();
+        },
+        async saveMode() {
+          const response = await $fetch('/api/user/' + 2 + '/update', { method: 'POST', body: { mode_theme: useColorMode().preference }});
+
         }
       },
     }
