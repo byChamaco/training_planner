@@ -28,3 +28,17 @@ export const update = async (evt) => {
         });
     }
 }
+
+export const search = async (evt) => {
+    try {
+        const body = await readBody(evt);
+        const result = await user.search(body);
+        
+        return result;
+    } catch (error) {
+        throw createError({
+            statusCode: 500,
+            statusMessage: 'Algo va mal'
+        });
+    }
+}

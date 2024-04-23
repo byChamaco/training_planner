@@ -1,6 +1,16 @@
 <template>
     <div class="login-container">
         <UForm :validate="validate" :state="state" class="login-form" @submit="onSubmit">
+            <UAlert
+                v-if="error"
+                icon="i-heroicons-exclamation-triangle-16-solid"
+                color="red"
+                variant="solid"
+                title="Error"
+                description="Contraseña o correo erróneo"
+                :style="'margin-bottom: 15px;'"
+                :close-button="{ icon: 'i-heroicons-x-mark-20-solid', color: 'gray', variant: 'link', padded: false}"
+            />
             <UFormGroup label="Email" name="email">
                 <UInput v-model="state.email" />
             </UFormGroup>
@@ -25,12 +35,23 @@ export default {
             state: {
                 email: undefined,
                 password: undefined,
-            }
+            },
+            error: false,
         }
     },
     methods: {
-        onSubmit(event) {
-            // console.log(event);
+        async onSubmit() {
+            this.error = false;
+            const response = await $fetch(
+                '/api/user/search',
+                { method: 'POST', body: { email: this.state.email, password: this.state.password }}
+            );
+
+            if (response && response.length > 0) {
+                this.$router.push('/modes');
+            } else {
+                this.error = true;
+            }
         },
         validate() {
             const errors = []
@@ -38,11 +59,9 @@ export default {
             if (!this.state.password) errors.push({ path: 'password', message: 'Required' })
             return errors
         },
-        redirectToModesPage() {
-            // Redirige a la página modes.vue
-            this.$router.push('/modes');
-        },
-
+        close() {
+            console.log('cerrar')
+        }
     },
 }
 </script>

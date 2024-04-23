@@ -14,3 +14,12 @@ export const update = async (id, mode_theme) => {
 
     return result;
 };
+
+export const search = async (data) => {
+    const result = await sql({
+        query: 'SELECT * FROM users WHERE email = ? and password = ?',
+        values: [data.email, data.password]
+    });
+
+    return result;
+};
