@@ -12,13 +12,8 @@
 </template>
 
 <script>
-import UButton from '~/components/Button.vue'
-
 export default {
     name: 'Modes',
-    components: {
-        UButton
-    },
     data() {
         return {
             modes: [

@@ -11,13 +11,8 @@
 </template>
 
 <script>
-import UButton from '~/components/Button.vue'
-
 export default {
     name: 'Welcome',
-    components: {
-        UButton
-    },
     data() {
         return {
             welcomeImage: '~/assets/img/welcomeDark.svg' // Asumiendo que la imagen inicial es la oscura
@@ -44,6 +39,12 @@ export default {
 .welcome-container {
     text-align: center;
     margin-top: 50px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
 }
 
 .welcome-image {

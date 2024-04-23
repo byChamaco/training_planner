@@ -26,6 +26,6 @@ a {
   color: var(--color-primary)
 }
 
-.personal_button {
+.app_header {
   background-color: var(--color-primary);
 }

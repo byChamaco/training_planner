@@ -14,7 +14,6 @@
                 name: null,
                 email: null,
                 password: null,
-                // mode_theme: 'dark',
             }
         },
         created() {
@@ -27,7 +26,7 @@
                     method: 'POST'
                 })
                 // useColorMode().preference = response.data[0].mode_theme;
-                console.log(response.data);
+                // console.log(response.data);
             },
             saveUser() {
 
