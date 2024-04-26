@@ -23,12 +23,7 @@
           useColorMode().preference = useColorMode().preference == 'dark' ? 'light' : 'dark';
           this.icon_name = useColorMode().preference == 'dark' ? 'i-mingcute-sun-fill' : 'i-mingcute-moon-stars-fill';
           localStorage.setItem('mode_theme', useColorMode().preference);
-          this.saveMode();
         },
-        async saveMode() {
-          const response = await $fetch('/api/user/' + 2 + '/update', { method: 'POST', body: { mode_theme: useColorMode().preference }});
-
-        }
       },
     }
 </script>
@@ -49,5 +44,7 @@
 
   .header-title {
     margin-left: auto;
+    font-weight: bold;
+    font-size: xx-large;
   }
 </style>

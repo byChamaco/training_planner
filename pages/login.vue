@@ -7,12 +7,12 @@
                 color="red"
                 variant="solid"
                 title="Error"
-                description="Contraseña o correo erróneo"
+                description="Wrong password or email"
                 :style="'margin-bottom: 15px;'"
                 :close-button="{ icon: 'i-heroicons-x-mark-20-solid', color: 'gray', variant: 'link', padded: false}"
             />
             <UFormGroup label="Email" name="email">
-                <UInput v-model="state.email" />
+                <UInput v-model="state.email" type="email"/>
             </UFormGroup>
 
             <UFormGroup label="Password" name="password">
