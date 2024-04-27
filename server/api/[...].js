@@ -7,5 +7,6 @@ router.get('/user/get', defineEventHandler(userCtrl.read))
 router.post('/user/search', defineEventHandler(userCtrl.search))
 router.post('/user/search_email', defineEventHandler(userCtrl.search_email))
 router.post('/user/:id/update', defineEventHandler(userCtrl.update))
+router.post('/user/create', defineEventHandler(userCtrl.create))
 
 export default useBase('/api', router.handler)

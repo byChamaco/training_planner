@@ -10,6 +10,7 @@
                 description="Wrong password or email"
                 :style="'margin-bottom: 15px;'"
                 :close-button="{ icon: 'i-heroicons-x-mark-20-solid', color: 'gray', variant: 'link', padded: false}"
+                @close="closeAlert"
             />
             <UFormGroup label="Email" name="email">
                 <UInput v-model="state.email" type="email"/>
@@ -59,8 +60,8 @@ export default {
             if (!this.state.password) errors.push({ path: 'password', message: 'Required' })
             return errors
         },
-        close() {
-            console.log('cerrar')
+        closeAlert() {
+            this.error = false;
         }
     },
 }

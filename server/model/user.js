@@ -32,3 +32,12 @@ export const search_email = async (data) => {
 
     return result;
 };
+
+export const create = async (data) => {
+    const result = await sql({
+        query: 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+        values: [data.user.name, data.user.email, data.user.password]
+    });
+
+    return result;
+};

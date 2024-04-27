@@ -9,7 +9,8 @@
                 title="Error"
                 description="This email is already in use"
                 :style="'margin-bottom: 15px;'"
-                :close-button="{ icon: 'i-heroicons-x-mark-20-solid', color: 'gray', variant: 'link', padded: false}"                
+                :close-button="{ icon: 'i-heroicons-x-mark-20-solid', color: 'gray', variant: 'link', padded: false }"  
+                @close="closeAlert"             
             />
             <UFormGroup label="Name" name="name">
                 <UInput v-model="state.name"/>
@@ -24,7 +25,7 @@
                 <UInput v-model="state.password2" type="password"/>
             </UFormGroup>
             <div class="singin-button-container">
-                <UButton type="submit">
+                <UButton type="submit" class="singin-button">
                     Continue
                 </UButton>
             </div>
@@ -55,6 +56,10 @@
                 );
 
                 if (response == true) {
+                    const user = await $fetch(
+                        '/api/user/create',
+                        { method: 'POST', body: { user: this.state}}
+                    );
                     this.$router.push('/modes');
                 } else {
                     this.error = true;
@@ -69,6 +74,9 @@
                 if (this.state.password2 != this.state.password) errors.push({ path: 'password2', message: 'The password dont match' })
                 return errors
             },
+            closeAlert() {
+                this.error = false;
+            }
         },
     }
 </script>

@@ -59,3 +59,17 @@ export const search_email = async (evt) => {
         });
     }
 }
+
+export const create = async (evt) => {
+    try {
+        const body = await readBody(evt);
+        const result = await user.create(body);
+        
+        return result;
+    } catch (error) {
+        throw createError({
+            statusCode: 500,
+            statusMessage: 'Algo va mal'
+        });
+    }
+}
