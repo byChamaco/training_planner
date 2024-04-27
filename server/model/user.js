@@ -23,3 +23,12 @@ export const search = async (data) => {
 
     return result;
 };
+
+export const search_email = async (data) => {
+    const result = await sql({
+        query: 'SELECT * FROM users WHERE email = ?',
+        values: [data.email]
+    });
+
+    return result;
+};
