@@ -23,10 +23,10 @@ export default {
                 'HIIT Fusion'
             ],
             modeDescriptions: {
-                'Cardio Blast': 'Mejora la resistencia cardiovascular y la quema de calorías.',
-                'Power Pump': 'Prioriza el desarrollo de la fuerza y la musculatura.',
-                'Flex & Balance': 'Mejora la flexibilidad y el equilibrio.',
-                'HIIT Fusion': 'Ejercicios de alta intensidad con periodos de descanso.'
+                'Cardio Blast': 'Improves cardiovascular endurance and calorie burning.',
+                'Power Pump': 'Prioritizes the development of strength and muscles.',
+                'Flex & Balance': 'Improves flexibility and balance.',
+                'HIIT Fusion': 'High intensity exercises with rest periods.'
             },
             showPopup: false,
             currentMode: null
